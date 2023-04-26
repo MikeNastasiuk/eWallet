@@ -1,0 +1,27 @@
+databaseChangeLog:
+  - changeSet:
+      id: add account constraints for customer
+      author: MikeN
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: customer_id
+            baseTableName: account
+            constraintName: fk_account_user
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: id
+            referencedTableName: customer
+            validate: true
+  - changeSet:
+      id: add account constraints for history
+      author: MikeN
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: currency_id
+            baseTableName: account
+            constraintName: fk_account_currency
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: id
+            referencedTableName: currency
+            validate: true

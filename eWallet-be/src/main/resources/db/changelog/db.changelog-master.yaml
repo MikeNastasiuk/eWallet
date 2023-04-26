@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/sequences/add_sequences.yaml
+  - includeAll:
+      path: db/changelog/tables
+  - include:
+      file: db/changelog/constraints/add_constraints.yaml
+  - include:
+      file: db/changelog/load_data/load_db_data.yaml

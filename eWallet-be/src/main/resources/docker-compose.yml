@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  wallet-db:
+    container_name: wallet-db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: rootPassword
+      POSTGRES_DB: wallet-db
+      PGDATA: "/var/lib/postgresql/data/wallet_db"
+    volumes:
+      - ./wallet_db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"

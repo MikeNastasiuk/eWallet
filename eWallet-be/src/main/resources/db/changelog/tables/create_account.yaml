@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: creating Account table
+      author: MikeN
+      changes:
+        - createTable:
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: customer_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: currency_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: amount
+                  type: decimal(1000, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: account
+                  type: varchar(36)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: description
+                  type: varchar
+                  constraints:
+                    nullable: true

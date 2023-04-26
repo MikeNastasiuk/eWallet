@@ -1,0 +1,34 @@
+version: '3.7'
+services:
+  wallet-db:
+    container_name: wallet-db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: rootPassword
+      POSTGRES_DB: wallet-db
+      PGDATA: "/var/lib/postgresql/data/wallet_db"
+    volumes:
+      - ./wallet_db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  wallet-be:
+    container_name: wallet-be
+    build: eWallet-be/
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://wallet-db:5432/wallet-db
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=rootPassword
+    depends_on:
+      - wallet-db
+  wallet-fe:
+    container_name: wallet-fe
+    build: eWallet-fe/
+    ports:
+      - "3000:80"
+    restart: always
+    depends_on:
+      - wallet-be

@@ -1,0 +1,30 @@
+.App {
+  
+  display: grid;
+  margin: 0 auto;
+  width: 1400px;
+  grid-template-areas:
+    "head head"
+    "nav con";
+
+  grid-template-columns: 150px 2fr;
+  grid-template-rows: 2fr 10fr;
+}
+
+.App-link {
+  color: #b5e6f5;
+}
+
+.header {
+  text-align: center;
+  grid-area: head;
+}
+
+.navigation{
+  width: 150px;
+  grid-area: nav;
+}
+
+.content{
+  grid-area: con;
+}

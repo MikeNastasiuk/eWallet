@@ -1,0 +1,4 @@
+export const ACC_OPERATION = {
+    REPLENISH: 'REPLENISH',
+    WITHDRAW: 'WITHDRAW'
+};

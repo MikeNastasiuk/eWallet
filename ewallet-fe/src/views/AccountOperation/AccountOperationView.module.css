@@ -1,0 +1,12 @@
+.button {
+    width: 150px;
+    height: 30px;
+}
+
+.error {
+    color: red;
+}
+
+.result {
+    color: green;
+}

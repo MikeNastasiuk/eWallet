@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: create account_sequence
+      author: MikeN
+      changes:
+        - createSequence:
+            cycle: false
+            incrementBy: 50
+            maxValue: 9223372036854775807
+            minValue: -9223372036854775808
+            sequenceName: account_sequence
+            startValue: 100
+  - changeSet:
+      id: create account_history_sequence
+      author: MikeN
+      changes:
+        - createSequence:
+            cycle: false
+            incrementBy: 50
+            maxValue: 9223372036854775807
+            minValue: -9223372036854775808
+            sequenceName: account_history_sequence
+            startValue: 100
+  - changeSet:
+      id: create currency_sequence
+      author: MikeN
+      changes:
+        - createSequence:
+            cycle: false
+            incrementBy: 50
+            maxValue: 9223372036854775807
+            minValue: -9223372036854775808
+            sequenceName: currency_sequence
+            startValue: 100
+  - changeSet:
+      id: create customer_sequence
+      author: MikeN
+      changes:
+        - createSequence:
+            cycle: false
+            incrementBy: 50
+            maxValue: 9223372036854775807
+            minValue: -9223372036854775808
+            sequenceName: customer_sequence
+            startValue: 100
